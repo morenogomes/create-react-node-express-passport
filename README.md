@@ -52,9 +52,9 @@ Add the following "scripts" block to your root folder's package.json (do *not* a
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
-    "client": "cd client && npm run start",
-    "install": "cd client && npm install",
-    "build": "cd client && npm run build",
+    "client": "cd client && yarn start",
+    "install": "cd client && yarn install",
+    "build": "cd client && yarn run build",
     "heroku-postbuild": "npm run build",
     "seed": "node scripts/seedDB.js"
   },
