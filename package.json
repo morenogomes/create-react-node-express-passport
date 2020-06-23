@@ -1,0 +1,46 @@
+{
+  "name": "mern-with-passportjs",
+  "version": "1.0.0",
+  "description": "MERN Sample with Passport JS",
+  "main": "server.js",
+  "scripts": {
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && yarn start",
+    "install": "cd client && yarn install",
+    "build": "cd client && yarn run build",
+    "heroku-postbuild": "npm run build",
+    "seed": "node scripts/seedDB.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/university-of-toronto-fsf/create-react-node-express-passport.git"
+  },
+  "keywords": [
+    "Node",
+    "Express",
+    "React",
+    "Database",
+    "Mongo",
+    "MySQL",
+    "PassportJS"
+  ],
+  "author": "Edward J. Apostol",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/university-of-toronto-fsf/create-react-node-express-passport/issues"
+  },
+  "homepage": "https://github.com/university-of-toronto-fsf/create-react-node-express-passport#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "if-env": "^1.0.4",
+    "mongoose": "^5.9.20",
+    "mysql2": "^2.1.0",
+    "sequelize": "^5.21.13"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "nodemon": "^2.0.4"
+  }
+}
